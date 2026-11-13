@@ -23,11 +23,10 @@ submission/
 │   ├── day.csv              # File asli harian
 │   └── hour.csv             # File asli per jam
 ├── notebook.ipynb           # Jupyter Notebook analisis data lengkap & tervalidasi
-├── Proyek_Analisis_Data.ipynb
 ├── README.md                # Panduan instruksi proyek & dashboard
 ├── requirements.txt         # Daftar pustaka dependensi Python
 └── url.txt                  # Tautan URL deployment Streamlit Cloud
-``````
+```
 
 ---
 
@@ -37,40 +36,41 @@ submission/
 
 ---
 
-## 🚀 Panduan Menjalankan Proyek
+## 🚀 Panduan Menjalankan Proyek (Setup Environment)
 
-### 1. Menyiapkan Lingkungan (Environment)
-Pastikan Anda telah memasang **Python 3.9+** pada sistem Anda. Sangat disarankan menggunakan virtual environment:
+### Setup Environment - Anaconda
+```bash
+conda create --name bike-sharing python=3.12
+conda activate bike-sharing
+pip install -r requirements.txt
+```
 
+### Setup Environment - Shell / Terminal (venv / pipenv)
 ```bash
 # Membuat virtual environment
 python -m venv venv
 
 # Mengaktifkan virtual environment
-# Pada Windows (PowerShell):
+# Windows (PowerShell):
 .\venv\Scripts\Activate.ps1
-# Pada Windows (Command Prompt):
+# Windows (CMD):
 .\venv\Scripts\activate.bat
-# Pada macOS / Linux:
+# Linux / macOS:
 source venv/bin/activate
-```
 
-### 2. Memasang Dependensi
-Pasang semua pustaka yang dibutuhkan menggunakan file `requirements.txt`:
-```bash
+# Memasang dependensi
 pip install -r requirements.txt
 ```
 
-### 3. Menjalankan Jupyter Notebook
-Untuk melihat atau menjalankan kembali seluruh tahapan analisis data:
+### Menjalankan Jupyter Notebook
+Untuk meninjau proses analisis data:
 ```bash
 jupyter notebook notebook.ipynb
-# atau buka langsung file notebook.ipynb / Proyek_Analisis_Data.ipynb di VS Code
 ```
+*(Atau buka langsung file `notebook.ipynb` di VS Code / Google Colab)*.
 
-### 4. Menjalankan Dashboard Interaktif (Streamlit)
-Jalankan perintah berikut pada terminal dari direktori `submission/` (atau direktori root proyek):
-
+### Menjalankan Dashboard Streamlit
+Jalankan perintah berikut di terminal:
 ```bash
 streamlit run dashboard/dashboard.py
 ```
@@ -79,10 +79,9 @@ atau jika berada di dalam folder `dashboard/`:
 cd dashboard
 streamlit run dashboard.py
 ```
-Aplikasi dashboard akan terbuka secara otomatis pada peramban web (*browser*) Anda di alamat `http://localhost:8501`.
+Aplikasi dashboard akan terbuka otomatis di browser pada alamat `http://localhost:8501`.
 
 ---
 
 ## 🌐 Tautan Dashboard Online
-Dashboard telah siap untuk dideploy ke **Streamlit Community Cloud**. Tautan publik dashboard dapat dicek pada file `url.txt`.
-
+Tautan deployment dashboard dapat dicek pada berkas `url.txt`.
